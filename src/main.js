@@ -13,36 +13,59 @@ Vue.config.productionTip = false
 Vue.use(Vuex)
 Vue.use(VueFirestore, {key: 'id'});
 
+//acá creamos nuestro almacén
+
 const store = new Vuex.Store({
+  //en mi estado tengo un usuario y mensaje de error
   state: {
-    user: null,
-    error: null
+    usuario: null,
+    error: null,
   },
+
   mutations: {
-    set_user(state, new_user){
-      state.user = new_user;
+    //mutacion para cambiar el "usuario"
+    //nuevo_usuario es mi argumento
+    set_usuario(state, nuevo_usuario){
+      state.usuario = nuevo_usuario;
     },
-    set_error(state, new_error){
-      state.error = new_error;
+    //mutacion para cambia el "error"
+    set_error(state, nuevo_error){
+      state.error = nuevo_error;
     }
   },
-  
+  // las acciones se utilizan cuando necesito crear una funcion asincrona
+  // acá llamamos a la accion àra registrar al usuario
   actions: {
-    register(context, datos){
+    registro(context, datos){
       firebase.auth().createUserWithEmailAndPassword(datos.email, datos.password)
-      // si es que el registro es exitoso
+
+      // si es que el registro es exitoso, ejecuto esta función
       .then(function (respuesta) {
         console.log(respuesta)
         context.commit('set_error', null);
-        context.commit('set_user', datos.email);
+        context.commit('set_usuario', datos.email);
         router.push('/');
       })
+
+      // acá creamos otro then para registrar el nombre
+
+
       // si ocurre un error
       .catch(function (error) {
+        //console.log(error)
         context.commit('set_error', error.message);
-        context.commit('set_user', null);
+        context.commit('set_usuario', null);
       });
-    }
+    },
+    /*login() {
+      firebase.auth().signInWithEmailAndPassword(this.login_email, this.login_password)
+        .then(user => {
+          
+         // this.$router.push({'login'})
+
+        }).catch(error)
+
+    }*/
   }
 })
 
