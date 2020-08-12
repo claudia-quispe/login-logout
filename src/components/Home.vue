@@ -1,25 +1,13 @@
 <template>
     <div>
-    <nav>
-        <div class="nav-wrapper">
-        <a href="#" class="brand-logo">Logo</a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="sass.html">Sass</a></li>
-            <li><a href="badges.html">Components</a></li>
-            <li><a href="collapsible.html">JavaScript</a></li>
-        </ul>
-        </div>
-    </nav>
-    <h3>Home</h3>
+    <img class="welcome-1" alt="welcome-1" src="@/assets/welcome-1.png">
+        
     </div>
 </template>
 <script>
 export default {
     name: 'Home',
-    data() {
-        return {
-
-        }
-    }
+    
 }
 </script>
+

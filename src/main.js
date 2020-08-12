@@ -35,20 +35,26 @@ const store = new Vuex.Store({
   },
   // las acciones se utilizan cuando necesito crear una funcion asincrona
   // acá llamamos a la accion àra registrar al usuario
-  actions: {
+
+  actions: { // esta es nuestra accion REGISTRO
     registro(context, datos){
       firebase.auth().createUserWithEmailAndPassword(datos.email, datos.password)
 
       // si es que el registro es exitoso, ejecuto esta función
-      .then(function (respuesta) {
-        console.log(respuesta)
+      .then(function () {
+        // si el registro es exitoso agrego el nombre
+        firebase.auth().currentUser.updateProfile({
+          displayName: datos.nombre
+        })
+      })
+      .then(() => {
+        // acá guardamos nuestros datos en el almacén
         context.commit('set_error', null);
-        context.commit('set_usuario', datos.email);
+        // set usuario tiene dos objetos email y name, dentro guardamos los datos 
+        // en set_usuario guardamos todos los datos del usuario, datos.email y datos.nombre
+        context.commit('set_usuario', {email: datos.email, nombre: datos.nombre}),
         router.push('/');
       })
-
-      // acá creamos otro then para registrar el nombre
-
 
       // si ocurre un error
       .catch(function (error) {
@@ -56,14 +62,14 @@ const store = new Vuex.Store({
         context.commit('set_usuario', null);
       });
     },
+
     login (context, datos) {
       firebase.auth().signInWithEmailAndPassword(datos.email, datos.password)
 
         // si el login es exitoso, ejecuto esta funcion
-        .then(user => {
-          console.log(user)
+        .then(respuesta => {
           context.commit('set_error', null);
-          context.commit('set_usuario', datos.email);
+          context.commit('set_usuario', {email: datos.email, nombre: respuesta.user.displayName});
           router.push({path: '/'})
         })
         // si ocurre un error
@@ -71,6 +77,17 @@ const store = new Vuex.Store({
           context.commit('set_error', err.message);
           context.commit('set_usuario', null);
         })
+    },
+
+    logout (context) {
+      //console.log('logout', context) //acá probamos si logout esta llegando a la consola
+      firebase.auth().signOut()
+      //si la salida es exitosa dejamos usuario y error en null
+      .then(() => {
+        context.commit('set_error',null);
+        context.commir('set_usuario',null);
+        router.push({path: '/'})
+      })
     }
   }
 })
