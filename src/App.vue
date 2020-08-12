@@ -1,18 +1,14 @@
 <template>
   <div id="app">
-    <img class="home" alt="Vue logo" src="./assets/home.png">
-    <login msg="Welcome to Your Vue.js App"/>
+    <router-view />
   </div>
 </template>
 
 <script>
-import Login from './components/Login.vue'
 
 export default {
   name: 'App',
-  components: {
-    Login
-  }
+  
 }
 </script>
 
@@ -22,7 +18,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #009aff;
+  color: black;
   margin-top: 60px;
 }
 .home {

@@ -52,20 +52,26 @@ const store = new Vuex.Store({
 
       // si ocurre un error
       .catch(function (error) {
-        //console.log(error)
         context.commit('set_error', error.message);
         context.commit('set_usuario', null);
       });
     },
-    /*login() {
-      firebase.auth().signInWithEmailAndPassword(this.login_email, this.login_password)
+    login (context, datos) {
+      firebase.auth().signInWithEmailAndPassword(datos.email, datos.password)
+
+        // si el login es exitoso, ejecuto esta funcion
         .then(user => {
-          
-         // this.$router.push({'login'})
-
-        }).catch(error)
-
-    }*/
+          console.log(user)
+          context.commit('set_error', null);
+          context.commit('set_usuario', datos.email);
+          router.push({path: '/'})
+        })
+        // si ocurre un error
+        .catch(err => {
+          context.commit('set_error', err.message);
+          context.commit('set_usuario', null);
+        })
+    }
   }
 })
 

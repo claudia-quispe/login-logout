@@ -3,6 +3,7 @@ import VueRouter from 'vue-router';
 
 
 import Login from '@/components/Login'
+import Home from '@/components/Home'
 
 Vue.use(VueRouter);    // instalamos explícitamente el router
 
@@ -10,8 +11,13 @@ Vue.use(VueRouter);    // instalamos explícitamente el router
 export default new VueRouter({
     routes: [
         {
-            path: '/', 
+            path: '/login', 
             component: Login
         },
+        {
+            path: '/', 
+            component: Home
+        },
+        
     ]
 })
