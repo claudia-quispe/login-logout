@@ -5,6 +5,8 @@ import firebase from 'firebase/app';
 
 import Login from '@/components/Login'
 import Home from '@/components/Home'
+import Cita from '@/components/Cita'
+
 
 Vue.use(VueRouter);    // instalamos explícitamente el router
 
@@ -24,7 +26,11 @@ const router = new VueRouter({
             meta: {
                 requiresAuth: true
             }
-        },   
+        },
+        {
+            path: '/cita', 
+            component: Cita,
+        },  
     ]
 })
 //con beforeEach redireccionamos rutas protegidas y otras no

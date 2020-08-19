@@ -5,11 +5,11 @@
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li><router-link to="/login" v-if="usuario" class="out"><a href="#">LOG OUT</a></router-link></li>
             </ul>
-            <a href="#" class="brand-logo">El muro</a>
+            <a class="consultorio">CONSULTORIO VIRTUAL</a>
         </div>
     </nav>
+    <h5 v-if="usuario" class="brand-logo">Hola {{ usuario.nombre }}!</h5>
     <router-view />
-    <h5 v-if="usuario" class="brand-logo">Bienvenido, {{ usuario.nombre }}!</h5>
   </div>
 </template>
 
@@ -45,12 +45,20 @@ export default {
   padding-top: 10px;
 }
 #nav-mobile {
-  background-color:#000000  !important;
+  background-color:#51bdb7  !important;
 }
 .nav-wrapper {
-  background-color: #000000 !important;
+  background-color: #49b8b3 !important;
 }
 .h5 {
   padding: 20px;
+}
+.consultorio {
+  text-align: left;
+  display: block;
+  padding-left: 30px;
+}
+.brand-logo {
+  margin-top: 30px;
 }
 </style>

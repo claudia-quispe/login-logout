@@ -4,8 +4,8 @@
             <p>{{ error }}</p>
         </div>
         <div class="col s2 m2"></div>
-        <div class="col s3 m3">
-            <h5 class="h5">Crea una cuenta!</h5>
+        <div id="relogin" class="col s3 m3">
+            <h6 class="h5">Ingresa a tu cuenta</h6>
             <form action="" @submit.prevent="registro">
                 <div class="row">
                     <div class="input-field s6 m6">
@@ -43,9 +43,8 @@
                 </div>
             </form>
         </div>
-        <div class="col s2 m2"></div>
-        <div class="col s3 m3">
-            <h5 class="h5">Inicia Sesión</h5>
+        <div id="relogin" class="col s3 m3">
+            <h6 class="h5">Inicia Sesión</h6>
             <form action="" @submit.prevent="login">
                 <div class="row">
                     <div class="input-field s6 m6">
@@ -61,14 +60,12 @@
                     <label for="password">Password</label>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <button type="submit" class="btn" name="action">Entrar</button>
-                    </div>
+                <div class="row">   
+                    <button type="submit" class="btn" name="action">Entrar</button>
                 </div>
             </form>
         </div>
-        <div class="col s2 m2"></div>
+        <div class="col s2 m3"></div>
     </div>
      
 </template>
@@ -144,5 +141,16 @@ export default {
 }
 .h5 {
     padding: 20px;
+}
+#relogin {
+    margin-top: 50px;
+    background-color: #ffffff !important;
+    border-radius: 10px;
+    margin: 25px 20px;
+    padding: 8px 30px;
+    box-shadow: 2px 2px 5px rgb(192, 190, 190);
+    margin-top: 50px;
+}.row {
+    text-align: center;
 }
 </style>
