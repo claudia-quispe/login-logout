@@ -85,8 +85,8 @@ const store = new Vuex.Store({
       //si la salida es exitosa dejamos usuario y error en null
       .then(() => {
         context.commit('set_error',null);
-        context.commir('set_usuario',null);
-        router.push({path: '/'})
+        context.commit('set_usuario',null);
+        router.push({path: '/login'})
       })
     }
   }

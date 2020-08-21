@@ -3,19 +3,7 @@
         <div class="row">
             <div class="col s3 m3"></div>
             <div class="col s6 m6">
-                <h6>Registro de horas solicitadas</h6>
-                <table>
-                    <thead>
-                        <tr>
-                        <th>Fecha</th>
-                        <th>Hora</th>
-                        <th>Nombre</th>
-                        <th>Motivo</th>
-                        <th>Cancelar</th>      
-                        </tr>
-                    </thead>
-                </table>
-                <button type="submit" class="btn" name="action">Solicita tu hora</button>
+               <h3>Home</h3>
             </div>
             <div class="col s3 m3"></div>
         </div>

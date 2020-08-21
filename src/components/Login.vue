@@ -144,7 +144,7 @@ export default {
 }
 #relogin {
     margin-top: 50px;
-    background-color: #ffffff !important;
+    background-color: #f5f5f5 !important;
     border-radius: 10px;
     margin: 25px 20px;
     padding: 8px 30px;

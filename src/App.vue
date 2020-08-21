@@ -2,8 +2,8 @@
   <div id="app">
     <nav>
         <div class="nav-wrapper">
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><router-link to="/login" v-if="usuario" class="out"><a href="#">LOG OUT</a></router-link></li>
+            <ul id="nav-mobile" class="right">
+                <li><button v-if="usuario" @click="logout" class="out" >LOG OUT</button></li>
             </ul>
             <a class="consultorio">CONSULTORIO VIRTUAL</a>
         </div>
@@ -45,10 +45,10 @@ export default {
   padding-top: 10px;
 }
 #nav-mobile {
-  background-color:#51bdb7  !important;
+  background-color:#746d6d  !important;
 }
 .nav-wrapper {
-  background-color: #49b8b3 !important;
+  background-color: #beb8b8 !important;
 }
 .h5 {
   padding: 20px;
