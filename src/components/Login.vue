@@ -5,7 +5,7 @@
         </div>
         <div class="col s2 m2"></div>
         <div id="relogin" class="col s3 m3">
-            <h6 class="h5">Ingresa a tu cuenta</h6>
+            <h6 class="titulo">Ingresa a tu cuenta</h6>
             <form action="" @submit.prevent="registro">
                 <div class="row">
                     <div class="input-field s6 m6">
@@ -44,7 +44,7 @@
             </form>
         </div>
         <div id="relogin" class="col s3 m3">
-            <h6 class="h5">Inicia Sesión</h6>
+            <h6 class="titulo">Inicia Sesión</h6>
             <form action="" @submit.prevent="login">
                 <div class="row">
                     <div class="input-field s6 m6">
@@ -139,8 +139,9 @@ export default {
     font-size: 1,7rem;
     font-weight: bold;
 }
-.h5 {
+h6 .titulo {
     padding: 20px;
+    
 }
 #relogin {
     margin-top: 50px;
@@ -150,7 +151,14 @@ export default {
     padding: 8px 30px;
     box-shadow: 2px 2px 5px rgb(192, 190, 190);
     margin-top: 50px;
-}.row {
+}
+.row {
     text-align: center;
 }
+.btn {
+    background-color: #0e6161;
+}
+
+
+
 </style>

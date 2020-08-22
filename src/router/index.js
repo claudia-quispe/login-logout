@@ -35,7 +35,7 @@ const router = new VueRouter({
             }
         },
         {
-            path: '/trivia:id', 
+            path: '/trivias', 
             component: Trivia,
             meta: {
                 requiresAuth: true

@@ -2,14 +2,14 @@
   <div id="app">
     <nav>
         <div class="nav-wrapper">
-            <ul id="nav-mobile" class="left">
-              <li><button v-if="usuario" @click="logout" class="out" >LOG OUT</button></li>
-              <li><router-link v-bind:to="{ path: `/` }"> Home </router-link></li>
-              <li><router-link v-bind:to="{ path: `/pregunta/` }"> Agregar una pregunta </router-link></li>
+          <h6 v-if="usuario" class="brand-logo">Hola {{ usuario.nombre }}!</h6>
+            <ul id="nav-mobile" class="right">
+              <li><router-link v-bind:to="{ path: `/` }">HOME</router-link></li>
+              <li><router-link v-bind:to="{ path: `/pregunta/` }"> AGREGA UNA PREGUNTA</router-link></li>
+              <li><button v-if="usuario" @click="logout" >LOG OUT</button></li>
             </ul>
         </div>
     </nav>
-    <h5 v-if="usuario" class="brand-logo">Hola {{ usuario.nombre }}!</h5>
     <router-view />
   </div>
 </template>
@@ -46,20 +46,23 @@ export default {
   padding-top: 10px;
 }
 #nav-mobile {
-  background-color:#746d6d  !important;
+  background-color:#000000  !important;
 }
 .nav-wrapper {
-  background-color: #beb8b8 !important;
+  background-color: #000000 !important;
 }
 .h5 {
-  padding: 20px;
+  padding: 25px;
 }
-.consultorio {
-  text-align: left;
-  display: block;
-  padding-left: 30px;
-}
+
 .brand-logo {
-  margin-top: 30px;
+  margin-top: 7px;
+}
+nav .brand-logo {
+    position: absolute;
+    color: #fff;
+    display:block; 
+    font-size: 1.8rem;
+    padding: 10px;
 }
 </style>
