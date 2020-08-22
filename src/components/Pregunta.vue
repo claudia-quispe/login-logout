@@ -4,35 +4,35 @@
             <div class="col s3 m3"></div>
             <div class="col s6 m6">
                <form class="form" @submit.prevent="new_trivia">
-                        <h5>Añade una Trivia </h5>
-                        <div class="input-field col s12 m12">
-                            <div>
-                                <input type="text" required="required" class="validate" v-model="add_pregunta">
-                                <label class="active" for="first_name2">Pregunta</label>
-                            </div>
-                            <div>
-                                <input type="text" required="required" class="validate" v-model="add_respuesta">
-                                <label class="active" for="first_name2">Respuesta correcta</label>
-                            </div>
-                            <div>
-                                <input type="text" required="required" class="validate" v-model="add_incorrecta1">
-                                <label class="active" for="first_name2">Respuesta Incorrecta 1</label>
-                            </div>
-                            <div>
-                                <input type="text" required="required" class="validate" v-model="add_incorrecta2">
-                                <label class="active" for="first_name2">Respuesta Incorrecta 2</label>
-                            </div>
-                            <div>
-                                <input type="text" required="required" class="validate" v-model="add_incorrecta3">
-                                <label class="active" for="first_name2">Respuesta Incorrecta 3</label>
-                            </div>
-                            <div class="input-field col s6 m6">
-                                <a type="submit" @click="new_trivia" class="waves-effect waves-light btn">AÑADIR!</a>
-                            </div>
-                            <div class="input-field col s6 m6">
-                                <a type="submit" @click="cancel_pregunta" class="waves-effect waves-light btn">CANCELAR</a>
-                            </div>
-                        </div>      
+                    <h5>Añade una Trivia </h5>
+                    <div class="input-field col s12 m12">
+                        <div>
+                            <input type="text" required="required" class="validate" v-model="add_pregunta">
+                            <label class="active" for="first_name2">Pregunta</label>
+                        </div>
+                        <div>
+                            <input type="text" required="required" class="validate" v-model="add_respuesta">
+                            <label class="active" for="first_name2">Respuesta correcta</label>
+                        </div>
+                        <div>
+                            <input type="text" required="required" class="validate" v-model="add_incorrecta1">
+                            <label class="active" for="first_name2">Respuesta Incorrecta 1</label>
+                        </div>
+                        <div>
+                            <input type="text" required="required" class="validate" v-model="add_incorrecta2">
+                            <label class="active" for="first_name2">Respuesta Incorrecta 2</label>
+                        </div>
+                        <div>
+                            <input type="text" required="required" class="validate" v-model="add_incorrecta3">
+                            <label class="active" for="first_name2">Respuesta Incorrecta 3</label>
+                        </div>
+                        <div class="input-field col s6 m6">
+                            <a type="submit" @click="new_trivia" class="waves-effect waves-light btn">AÑADIR!</a>
+                        </div>
+                        <div class="input-field col s6 m6">
+                            <a type="submit" @click="cancel_pregunta" class="waves-effect waves-light btn">CANCELAR</a>
+                        </div>
+                    </div>      
                 </form>
             </div>
             <div class="col s3 m3"></div>
@@ -87,16 +87,13 @@ export default {
             this.$router.push('/trivias')
         }
     },
-    firestore() {         
-    return {
-      trivia: db.collection('trivia')
-    }
-  },
+    
 }
 </script>
 <style>
 h5 {
     margin-top: 60px;
+    font-weight: bold;
 }
 
 </style>

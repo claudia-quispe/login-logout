@@ -10,9 +10,18 @@
                         <tr>
                         <th>Nombre</th>
                         <th>Puntaje</th>
-                        <th>Porcentaje</th>     
+                        <th>Porcentaje</th>
+                        <th>Fecha</th>
                         </tr>
                     </thead>
+                    <tbody>
+                        <tr v-for="trivias in trivia" :key="trivias.id">
+                        <th>{{trivia.nombre}}</th>
+                        <th>{{trivia.puntaje}}</th>
+                        <th>{{trivia.porcentaje}}</th>
+                        <th>{{trivia.fecha}}</th>     
+                        </tr>
+                    </tbody>
                 </table>
             </div>
             <div class="col s3 m3"></div>
@@ -21,9 +30,10 @@
 </template>
 
 <script>
-//import { db } from '@/firebase'
+import { db } from '@/firebase'
 import 'firebase/auth';
 import router from '@/router'
+
 
 export default {
     name: 'Home',
@@ -31,20 +41,23 @@ export default {
         return {
 
         }
+        
     },
     methods: {
         jugar() {
             router.push('/trivias');
         },
     },
+
     firestore() {
         return {
-
+            trivia: db.collection('trivia')
         }
     }
 }
 
 </script>
+
 
 <style>
 .waves-effect {
