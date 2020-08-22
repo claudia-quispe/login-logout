@@ -2,10 +2,11 @@
   <div id="app">
     <nav>
         <div class="nav-wrapper">
-            <ul id="nav-mobile" class="right">
-                <li><button v-if="usuario" @click="logout" class="out" >LOG OUT</button></li>
+            <ul id="nav-mobile" class="left">
+              <li><button v-if="usuario" @click="logout" class="out" >LOG OUT</button></li>
+              <li><router-link v-bind:to="{ path: `/` }"> Home </router-link></li>
+              <li><router-link v-bind:to="{ path: `/pregunta/` }"> Agregar una pregunta </router-link></li>
             </ul>
-            <a class="consultorio">CONSULTORIO VIRTUAL</a>
         </div>
     </nav>
     <h5 v-if="usuario" class="brand-logo">Hola {{ usuario.nombre }}!</h5>

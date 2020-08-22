@@ -4,6 +4,8 @@ import firebase from 'firebase/app';
 
 import Login from '@/components/Login'
 import Home from '@/components/Home'
+import Pregunta from '@/components/Pregunta'
+import Trivia from '@/components/Trivia'
 
 
 Vue.use(VueRouter);    // instalamos explícitamente el router
@@ -25,7 +27,20 @@ const router = new VueRouter({
                 requiresAuth: true
             }
         },
-        
+        {
+            path: '/pregunta', 
+            component: Pregunta,
+            meta: {
+                requiresAuth: true
+            }
+        },
+        {
+            path: '/trivia:id', 
+            component: Trivia,
+            meta: {
+                requiresAuth: true
+            }
+        },
     ]
 })
 //con beforeEach redireccionamos rutas protegidas y otras no
