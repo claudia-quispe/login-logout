@@ -6,7 +6,7 @@
             <ul id="nav-mobile" class="right">
               <li><router-link v-bind:to="{ path: `/` }">HOME</router-link></li>
               <li><router-link v-bind:to="{ path: `/pregunta/` }"> AGREGA UNA PREGUNTA</router-link></li>
-              <li><button v-if="usuario" @click="logout" >LOG OUT</button></li>
+              <li><button class="logout" v-if="usuario" @click="logout" >LOG OUT</button></li>
             </ul>
         </div>
     </nav>
@@ -64,5 +64,8 @@ nav .brand-logo {
     display:block; 
     font-size: 1.8rem;
     padding: 10px;
+}
+.logout {
+  background-color: 
 }
 </style>

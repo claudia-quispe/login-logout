@@ -4,7 +4,7 @@
             <div class="col s3 m3"></div>
             <div class="col s6 m6">
             <h6 class="titulo_click">Haz click en el botón para jugar!</h6>
-               <a class="waves-effect waves-light btn-large" type="submit" @click="jugar" value="jugar" >JUGAR</a>
+               <a class="waves-effect waves-light btn-large" type="submit" @click="jugar_click" value="jugar" >JUGAR</a>
                <table>
                     <thead>
                         <tr>
@@ -15,11 +15,11 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="trivias in trivia" :key="trivias.id">
-                        <th>{{trivia.nombre}}</th>
-                        <th>{{trivia.puntaje}}</th>
-                        <th>{{trivia.porcentaje}}</th>
-                        <th>{{trivia.fecha}}</th>     
+                        <tr v-for="juego in jugar" :key="juego.id">
+                        <th>{{juego.nombre}}</th>
+                        <th>{{juego.puntaje}}</th>
+                        <th>{{juego.porcentaje}}%</th>
+                        <th>{{juego.fecha}}</th>
                         </tr>
                     </tbody>
                 </table>
@@ -44,14 +44,14 @@ export default {
         
     },
     methods: {
-        jugar() {
+        jugar_click() {
             router.push('/trivias');
         },
     },
 
     firestore() {
         return {
-            trivia: db.collection('trivia')
+            jugar: db.collection('jugar')
         }
     }
 }

@@ -96,6 +96,7 @@ export default {
         cancel_trivia() {
             this.$router.push('/')
         },
+
     },
 
     firestore() {
